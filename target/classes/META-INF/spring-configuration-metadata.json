@@ -1,0 +1,30 @@
+{
+  "groups": [
+    {
+      "name": "library",
+      "type": "com.example.webclientdemo.externalconnector.GlobalInitalizerProperties",
+      "sourceType": "com.example.webclientdemo.externalconnector.GlobalInitalizerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "library.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.example.webclientdemo.externalconnector.GlobalInitalizerProperties",
+      "defaultValue": 8080
+    },
+    {
+      "name": "library.proxy",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.example.webclientdemo.externalconnector.GlobalInitalizerProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "library.proxy-u-r-l",
+      "type": "java.lang.String",
+      "sourceType": "com.example.webclientdemo.externalconnector.GlobalInitalizerProperties",
+      "defaultValue": ""
+    }
+  ],
+  "hints": []
+}
