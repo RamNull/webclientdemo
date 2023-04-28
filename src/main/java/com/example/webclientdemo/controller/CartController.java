@@ -1,6 +1,7 @@
 package com.example.webclientdemo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class CartController{
     WebClientConnector webClientConnector;
 
     @GetMapping("/getairlines")
-    public JsonNode getAirlines()
+    public ResponseEntity<String> getAirlines()
     {
        return webClientConnector.getRequest(null, "https://api.instantwebtools.net/v1/airlines");
     }

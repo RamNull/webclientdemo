@@ -34,13 +34,13 @@ public class WebClientConnector {
     private static final WebClient WEB_CLIENT = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE).
                                                 clientConnector(CONNECTOR).build();
 
-    public JsonNode getRequest(Map<String, ?> headers, String url) {
+    public ResponseEntity<String> getRequest(Map<String, ?> headers, String url) {
         RequestHeadersSpec<?> requestHeadersSpec = null;
         if (headers == null || headers.isEmpty())
             requestHeadersSpec = WEB_CLIENT.get().uri(url);
         else
             requestHeadersSpec = WEB_CLIENT.get().uri(url, headers);
-        return requestHeadersSpec.retrieve().bodyToMono(JsonNode.class).block();
+        return requestHeadersSpec.retrieve().toEntity(String.class).block();
     }
 
 
